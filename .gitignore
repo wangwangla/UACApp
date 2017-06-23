@@ -1,0 +1,6 @@
+voltdbroot
+log
+*.log
+*.class
+.settings
+HuaweiUACApp.jar
