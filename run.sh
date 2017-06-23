@@ -19,9 +19,9 @@ source $VOLTDB_BIN/voltenv
 
 # leader host for startup purposes only
 # (once running, all nodes are the same -- no leaders)
-STARTUPLEADERHOST="localhost"
+STARTUPLEADERHOST="volt18a"
 # list of cluster nodes separated by commas in host:[port] format
-SERVERS="localhost"
+SERVERS="volt18a,volt18b"
 
 # remove binaries, logs, runtime artifacts, etc... but keep the jars
 function clean() {
@@ -63,14 +63,15 @@ function jars-ifneeded() {
 
 # Init to directory voltdbroot
 function voltinit-ifneeded() {
-    voltdb init --force
+    voltdb init --force -C deployment.xml
 }
 
 # run the voltdb server locally
 function server() {
+    export VOLTDB_HEAPMAX="5000"
     jars-ifneeded
     voltinit-ifneeded
-    voltdb start -H $STARTUPLEADERHOST
+    voltdb start -c 2 -H $STARTUPLEADERHOST
 }
 
 # load schema and procedures
@@ -97,9 +98,9 @@ function async-benchmark-help() {
 function async-benchmark() {
     jars-ifneeded
     java -classpath lib/voltdb-6.6.7.jar:lib/voltdbclient-6.6.7.jar:HuaweiUACApp.jar HuaweiUACApp.ReproducerApp \
-        --displayinterval=5 \
-        --warmup=5 \
-        --datasize=1000 \
+        --displayinterval=10 \
+        --warmup=10 \
+        --datasize=500000 \
         --duration=2147483646 \
         --servers=$SERVERS | tee applog.log
 }
