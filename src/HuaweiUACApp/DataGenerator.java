@@ -29,6 +29,9 @@ public class DataGenerator {
     }
 
     public static void generate(Client client, int tableId, int rowCount) {
+        if (rowCount == 0) {
+            return;
+        }
         ClientApp.printLogStatic(DataGenerator.class.getSimpleName(),
                 String.format("Generating %d rows of data for table 'TABLE%d'...", rowCount, tableId));
         String procedureName = String.format("TABLE%d.insert", tableId);
