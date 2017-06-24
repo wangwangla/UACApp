@@ -18,10 +18,11 @@ public final class ReproducerApp extends ClientApp {
     private final List<BusinessLogic> m_bizLogics =
             Collections.synchronizedList(new ArrayList<>());
     private final Random m_random = new Random();
+    private static final int DEFAULT_DATASIZE = 100000;
 
     private void runCommonProc() throws NoConnectionsException, IOException {
         int bizLogicIndex = m_random.nextInt(m_bizLogics.size());
-        int partitionValue = m_random.nextInt(m_config.datasize);
+        int partitionValue = m_random.nextInt(m_config.datasize == 0 ? DEFAULT_DATASIZE : m_config.datasize);
         m_client.callProcedure(new NullCallback(),
                 CodeGeneration.COMMON_PROC_CLASS_NAME,
                 partitionValue,                             // partition value
