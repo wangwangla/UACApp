@@ -100,9 +100,9 @@ function async-benchmark() {
     java -classpath lib/voltdb-6.6.7.jar:lib/voltdbclient-6.6.7.jar:HuaweiUACApp.jar HuaweiUACApp.ReproducerApp \
         --displayinterval=10 \
         --warmup=10 \
-        --datasize=500000 \
+        --datasize=0 \
         --duration=2147483646 \
-        --servers=$SERVERS | tee applog.log
+        --servers=$SERVERS
 }
 
 function help() {
