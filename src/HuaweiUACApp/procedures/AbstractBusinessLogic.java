@@ -2,7 +2,6 @@ package HuaweiUACApp.procedures;
 
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -31,8 +30,7 @@ public abstract class AbstractBusinessLogic {
         }
 
         List<SQLStmt> queriesToQueue = getQueriesToQueue();
-        List<VoltTable> tables = new ArrayList<>(
-                Arrays.asList(vtIn1, vtIn2, vtIn3, vtIn4, vtIn5, vtIn6));
+        List<VoltTable> tables = Arrays.asList(vtIn1, vtIn2, vtIn3, vtIn4, vtIn5, vtIn6);
 
         // Call a weird function that takes about 1000 objects as parameter.
         // This is what Huawei did and it is suspected that this can corrupt JVM stack???
