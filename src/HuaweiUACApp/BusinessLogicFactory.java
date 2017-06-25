@@ -1,7 +1,7 @@
 package HuaweiUACApp;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
@@ -29,7 +29,7 @@ public class BusinessLogicFactory {
 
             // The list of involved tables should not have duplicates.
             // And it could be in different orders.
-            Set<Integer> tableIdsToInvolve = new HashSet<>();
+            Set<Integer> tableIdsToInvolve = new LinkedHashSet<>();
             while (tableIdsToInvolve.size() < numOfTablesToInvolve) {
                 // table id start from 0.
                 tableIdsToInvolve.add(m_random.nextInt(CodeGeneration.DB_TABLE_COUNT));
