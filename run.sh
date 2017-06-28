@@ -27,9 +27,9 @@ SERVERS="volt18c,volt18d"
 function clean() {
     rm -rf voltdbroot \
            log \
-           src/HuaweiUACApp/*.class \
-           src/HuaweiUACApp/compiler/*.class \
-           src/HuaweiUACApp/procedures/*.class \
+           src/UACApp/*.class \
+           src/UACApp/compiler/*.class \
+           src/UACApp/procedures/*.class \
            *.log
 }
 
@@ -43,20 +43,20 @@ function cleanall() {
 function jars() {
     # compile java source
     javac -classpath lib/voltdb-6.6.7.jar:lib/voltdbclient-6.6.7.jar \
-        src/HuaweiUACApp/*.java \
-        src/HuaweiUACApp/compiler/*.java \
-        src/HuaweiUACApp/procedures/*.java
+        src/UACApp/*.java \
+        src/UACApp/compiler/*.java \
+        src/UACApp/procedures/*.java
     # build procedure and client jars
-    jar cf HuaweiUACApp.jar -C src HuaweiUACApp
+    jar cf UACApp.jar -C src UACApp
     # remove compiled .class files
-    rm -rf src/HuaweiUACApp/*.class \
-           src/HuaweiUACApp/compiler/*.class \
-           src/HuaweiUACApp/procedures/*.class
+    rm -rf src/UACApp/*.class \
+           src/UACApp/compiler/*.class \
+           src/UACApp/procedures/*.class
 }
 
 # compile the procedure and client jarfiles if they don't exist
 function jars-ifneeded() {
-    if [ ! -e HuaweiUACApp.jar ]; then
+    if [ ! -e UACApp.jar ]; then
         jars;
     fi
 }
@@ -89,7 +89,7 @@ function client() {
 # Use this target for argument help
 function async-benchmark-help() {
     jars-ifneeded
-    java -classpath HuaweiUACApp.jar:$CLIENTCLASSPATH HuaweiUACApp.ReproducerApp --help
+    java -classpath UACApp.jar:$CLIENTCLASSPATH UACApp.ReproducerApp --help
 }
 
 # latencyreport: default is OFF
@@ -97,7 +97,7 @@ function async-benchmark-help() {
 # Disable the comments to get latency report
 function async-benchmark() {
     jars-ifneeded
-    java -classpath lib/voltdb-6.6.7.jar:lib/voltdbclient-6.6.7.jar:HuaweiUACApp.jar HuaweiUACApp.ReproducerApp \
+    java -classpath lib/voltdb-6.6.7.jar:lib/voltdbclient-6.6.7.jar:UACApp.jar UACApp.ReproducerApp \
         --displayinterval=20 \
         --warmup=5 \
         --datasize=100000 \

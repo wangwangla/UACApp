@@ -1,9 +1,9 @@
-package HuaweiUACApp;
+package UACApp;
 
 import java.util.List;
 import java.util.Map.Entry;
 
-import HuaweiUACApp.compiler.InMemoryJavaSourceCode;
+import UACApp.compiler.InMemoryJavaSourceCode;
 
 public class CommonProcedureFactory {
 

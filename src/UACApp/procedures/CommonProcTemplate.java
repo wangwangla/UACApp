@@ -1,4 +1,4 @@
-package HuaweiUACApp.procedures;
+package UACApp.procedures;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;

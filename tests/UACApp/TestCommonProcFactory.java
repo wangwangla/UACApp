@@ -1,12 +1,10 @@
-    package HuaweiApp;
+package UACApp;
 
 import java.util.Arrays;
 
 import org.junit.Test;
 
-import HuaweiUACApp.BusinessLogic;
-import HuaweiUACApp.CommonProcedureFactory;
-import HuaweiUACApp.compiler.InMemoryJavaSourceCode;
+import UACApp.compiler.InMemoryJavaSourceCode;
 
 public class TestCommonProcFactory {
 

@@ -1,4 +1,4 @@
-package HuaweiUACApp;
+package UACApp;
 
 public class QueryFactory {
 

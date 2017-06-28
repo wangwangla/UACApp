@@ -1,10 +1,8 @@
-package HuaweiApp;
+package UACApp;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-
-import HuaweiUACApp.QueryFactory;
 
 public class TestQueryFactory {
 

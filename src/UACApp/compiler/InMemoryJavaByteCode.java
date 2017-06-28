@@ -1,4 +1,4 @@
-package HuaweiUACApp.compiler;
+package UACApp.compiler;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;

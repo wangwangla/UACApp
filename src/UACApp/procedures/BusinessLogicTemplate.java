@@ -1,4 +1,4 @@
-package HuaweiUACApp.procedures;
+package UACApp.procedures;
 
 import java.util.ArrayList;
 import java.util.List;

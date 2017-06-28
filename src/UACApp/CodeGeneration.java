@@ -1,11 +1,11 @@
-package HuaweiUACApp;
+package UACApp;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 
-import HuaweiUACApp.compiler.InMemoryJavaSourceCode;
+import UACApp.compiler.InMemoryJavaSourceCode;
 
 public class CodeGeneration {
 
@@ -21,8 +21,8 @@ public class CodeGeneration {
     public static final DateTimeFormatter DT_FORMAT =
             DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss,SSS");
 
-    public static final String PACKAGE_PATH = "HuaweiUACApp.procedures.";
-    public static final String SRC_PATH = "src/HuaweiUACApp/procedures/";
+    public static final String PACKAGE_PATH = "UACApp.procedures.";
+    public static final String SRC_PATH = "src/UACApp/procedures/";
 
     // For the abstract business logic
     private static final String ABSTRACT_BIZ_LOGIC_CLASS_NAME = "AbstractBusinessLogic";

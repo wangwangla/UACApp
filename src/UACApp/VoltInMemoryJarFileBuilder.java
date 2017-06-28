@@ -1,12 +1,12 @@
-package HuaweiUACApp;
+package UACApp;
 
 import java.util.Map;
 import java.util.Map.Entry;
 
 import org.voltdb.utils.InMemoryJarfile;
 
-import HuaweiUACApp.compiler.InMemoryClassLoader;
-import HuaweiUACApp.compiler.InMemoryJavaByteCode;
+import UACApp.compiler.InMemoryClassLoader;
+import UACApp.compiler.InMemoryJavaByteCode;
 
 public class VoltInMemoryJarFileBuilder {
 

@@ -1,4 +1,4 @@
-package HuaweiUACApp.compiler;
+package UACApp.compiler;
 
 import java.util.Collections;
 import java.util.HashMap;

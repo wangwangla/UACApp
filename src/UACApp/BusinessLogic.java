@@ -1,12 +1,13 @@
-package HuaweiUACApp;
+package UACApp;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.TreeMap;
 
-import HuaweiUACApp.compiler.InMemoryJavaSourceCode;
+import UACApp.compiler.InMemoryJavaSourceCode;
+
+import java.util.TreeMap;
 
 public class BusinessLogic {
 

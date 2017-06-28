@@ -1,4 +1,4 @@
-package HuaweiUACApp;
+package UACApp;
 
 import java.io.IOException;
 import java.util.ArrayList;

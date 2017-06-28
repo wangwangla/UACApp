@@ -1,4 +1,4 @@
-package HuaweiUACApp.procedures;
+package UACApp.procedures;
 
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -33,7 +33,7 @@ public abstract class AbstractBusinessLogic {
         List<VoltTable> tables = Arrays.asList(vtIn1, vtIn2, vtIn3, vtIn4, vtIn5, vtIn6);
 
         // Call a weird function that takes about 1000 objects as parameter.
-        // This is what Huawei did and it is suspected that this can corrupt JVM stack???
+        // This is what our customer did and it is suspected that this can corrupt JVM stack???
         Object[] params = new Object[1000];
         for (int i = 0; i < 1000; i++) {
             try {

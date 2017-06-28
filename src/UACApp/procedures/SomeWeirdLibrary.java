@@ -1,4 +1,4 @@
-package HuaweiUACApp.procedures;
+package UACApp.procedures;
 
 public class SomeWeirdLibrary {
 

@@ -1,4 +1,4 @@
-package HuaweiUACApp;
+package UACApp;
 
 import java.time.ZonedDateTime;
 import java.util.Timer;
@@ -276,7 +276,10 @@ public abstract class ClientApp {
         }
     }
 
-    protected static void printLogStatic(String className, String msg) {
+    protected static void printLogStatic(String className, String msg, Object...args) {
+        if (args != null) {
+            msg = String.format(msg, args);
+        }
         String header = String.format("%s [%s] ",
                 ZonedDateTime.now().format(CodeGeneration.DT_FORMAT),
                 className);
@@ -285,8 +288,8 @@ public abstract class ClientApp {
                 header, msg.replaceAll("\n", "\n" + header)));
     }
 
-    protected void printLog(String msg) {
-        printLogStatic(this.getClass().getSimpleName(), msg);
+    protected void printLog(String msg, Object...args) {
+        printLogStatic(this.getClass().getSimpleName(), msg, args);
     }
 
     protected void printTaskHeader(String taskString) {

@@ -1,4 +1,4 @@
-package HuaweiUACApp;
+package UACApp;
 
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
@@ -10,10 +10,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.voltdb.client.Client;
 import org.voltdb.utils.InMemoryJarfile;
 
-import HuaweiUACApp.ClientApp.TheClientConfig;
-import HuaweiUACApp.compiler.InMemoryClassLoader;
-import HuaweiUACApp.compiler.InMemoryJavaCompiler;
-import HuaweiUACApp.compiler.InMemoryJavaSourceCode;
+import UACApp.ClientApp.TheClientConfig;
+import UACApp.compiler.InMemoryClassLoader;
+import UACApp.compiler.InMemoryJavaCompiler;
+import UACApp.compiler.InMemoryJavaSourceCode;
 
 public class UACWork implements Runnable {
 
@@ -170,7 +170,11 @@ public class UACWork implements Runnable {
         printLog("@UpdateClasses succeeded.");
     }
 
-    protected static void printLogStatic(String className, String msg) {
+    protected static void printLogStatic(String className, String msg, Object...args) {
+        if (args != null) {
+            msg = String.format(msg, args);
+        }
+
         String header = String.format("%s [%s] ",
                 ZonedDateTime.now().format(CodeGeneration.DT_FORMAT),
                 className);
@@ -178,8 +182,8 @@ public class UACWork implements Runnable {
         System.out.println(String.format("%s%s", header, msg));
     }
 
-    protected void printLog(String msg) {
-        printLogStatic(this.getClass().getSimpleName(), msg);
+    protected void printLog(String msg, Object...args) {
+        printLogStatic(this.getClass().getSimpleName(), msg, args);
     }
 
     protected void printTaskHeader(String taskString) {

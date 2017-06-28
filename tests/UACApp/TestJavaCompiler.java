@@ -1,4 +1,4 @@
-package HuaweiApp;
+package UACApp;
 
 import static org.junit.Assert.fail;
 
@@ -8,8 +8,8 @@ import java.lang.reflect.Method;
 
 import org.junit.Test;
 
-import HuaweiUACApp.compiler.InMemoryJavaCompiler;
-import HuaweiUACApp.compiler.InMemoryJavaSourceCode;
+import UACApp.compiler.InMemoryJavaCompiler;
+import UACApp.compiler.InMemoryJavaSourceCode;
 
 public class TestJavaCompiler {
 

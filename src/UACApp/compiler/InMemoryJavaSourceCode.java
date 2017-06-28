@@ -1,4 +1,4 @@
-package HuaweiUACApp.compiler;
+package UACApp.compiler;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -6,7 +6,7 @@ import java.net.URI;
 
 import javax.tools.SimpleJavaFileObject;
 
-import HuaweiUACApp.CodeGeneration;
+import UACApp.CodeGeneration;
 
 public class InMemoryJavaSourceCode extends SimpleJavaFileObject {
 

@@ -1,4 +1,4 @@
-package HuaweiUACApp;
+package UACApp;
 
 import java.io.BufferedReader;
 import java.io.File;
