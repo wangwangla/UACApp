@@ -50,7 +50,7 @@ public abstract class ClientApp {
             m_client = getClientAndConnect(config);
         }
         catch (Exception e) {
-            System.err.println("Could not connect to DB: " + e.getMessage());
+            System.err.println("Could not connect to database: " + e.getMessage());
             System.exit(-1);
         }
 
@@ -64,6 +64,16 @@ public abstract class ClientApp {
     }
 
     public abstract void run() throws Exception;
+
+    protected void resetStats() {
+        // reset the stats after warmup
+        m_fullStatsContext.fetchAndResetBaseline();
+        m_periodicStatsContext.fetchAndResetBaseline();
+
+        // print periodic statistics to the console
+        m_benchmarkStartTS = System.currentTimeMillis();
+        schedulePeriodicStats();
+    }
 
     /**
      * Create a Timer task to display performance data on the Vote procedure

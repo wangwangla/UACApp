@@ -68,13 +68,7 @@ public final class ReproducerApp extends ClientApp {
             runCommonProc();
         }
 
-        // reset the stats after warmup
-        m_fullStatsContext.fetchAndResetBaseline();
-        m_periodicStatsContext.fetchAndResetBaseline();
-
-        // print periodic statistics to the console
-        m_benchmarkStartTS = System.currentTimeMillis();
-        schedulePeriodicStats();
+        resetStats();
 
         // Run the query workload loop for the requested duration
         // The throughput may be throttled depending on client configuration
